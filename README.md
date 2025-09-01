@@ -31,6 +31,11 @@ API para gerenciamento de pedidos de férias, construída com .NET 7, arquitetur
 
 A API utiliza **JWT (JSON Web Tokens)** para autenticação:
 
+Fazer o primeiro acesso
+Fazer Login 
+Passar token para o swagger : 
+
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImFsYW5hLnNvdXNhQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFETUlOIiwiZXhwIjoxNzU2NzQ2MDEyLCJpc3MiOiJXb3JrRmxvVy1WYWNhdGlvbiIsImF1ZCI6IkFjY2Vzc0F1ZGllbmNlIn0.LgeczdN1NU8fBwV9oXPH7EyQKyXWImsejmITAC3w9cI
 
 - Tokens assinados com **HMAC SHA256** (SymmetricSecurityKey).
 - Rejeição de tokens inválidos ou expirados.
