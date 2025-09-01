@@ -64,13 +64,11 @@ namespace WorkFlow.Vacation.Infrastructure.Repositories
               await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> HasOverlapAsync(DateOnly startDate, DateOnly endDate, int? UpdateId = null)
+        public async Task<bool> HasOverlapAsync(DateOnly startDate, DateOnly endDate)
         {
             var query = _context.VacationRequests.AsQueryable();
 
-            if (UpdateId.HasValue)
-                query = query.Where(v => v.Id != UpdateId.Value);
-
+         
             return await query
                 .Where(v => v.Status == VacationRequestStatusEnum.Approved
                          || v.Status == VacationRequestStatusEnum.Pending)

@@ -15,7 +15,7 @@ namespace WorkFlow.Vacation.Core.Interfaces
         Task AddAsync(VacationRequestEntity vacationRequest);
         Task UpdateAsync(VacationRequestEntity vacationRequest);
         Task DeleteAsync(VacationRequestEntity  vacationRequest);
-        Task<bool> HasOverlapAsync(DateOnly startDate, DateOnly endDate, int? UpdateId = null);
+        Task<bool> HasOverlapAsync(DateOnly startDate, DateOnly endDate);
 
 
     }

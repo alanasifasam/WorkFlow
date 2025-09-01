@@ -46,7 +46,7 @@ namespace WorkFlow.Vacation.Tests
         public async Task CreateAsync_ShouldReturnApproved_WhenNoOverlap()
         {
             // Arrange
-            _repositoryMock.Setup(r => r.HasOverlapAsync(It.IsAny<DateOnly>(), It.IsAny<DateOnly>(), null))
+            _repositoryMock.Setup(r => r.HasOverlapAsync(It.IsAny<DateOnly>(), It.IsAny<DateOnly>()))
                            .ReturnsAsync(false);
 
             var input = new VacationRequestInputModel
@@ -76,7 +76,7 @@ namespace WorkFlow.Vacation.Tests
         public async Task CreateAsync_ShouldReturnError_WhenDatesOverlap()
         {
             // Arrange
-            _repositoryMock.Setup(r => r.HasOverlapAsync(It.IsAny<DateOnly>(), It.IsAny<DateOnly>(), null))
+            _repositoryMock.Setup(r => r.HasOverlapAsync(It.IsAny<DateOnly>(), It.IsAny<DateOnly>()))
                            .ReturnsAsync(true);
 
             var input = new VacationRequestInputModel
@@ -105,8 +105,7 @@ namespace WorkFlow.Vacation.Tests
             // Arrange
             _repositoryMock.Setup(r => r.HasOverlapAsync(
                     DateOnly.Parse("2025-08-14"),
-                    DateOnly.Parse("2025-08-18"),
-                    null))
+                    DateOnly.Parse("2025-08-18")))
                 .ReturnsAsync(true);
 
             var input = new VacationRequestInputModel
@@ -135,8 +134,7 @@ namespace WorkFlow.Vacation.Tests
             // Arrange
             _repositoryMock.Setup(r => r.HasOverlapAsync(
                     DateOnly.Parse("2025-08-30"),
-                    DateOnly.Parse("2025-09-05"),
-                    null))
+                    DateOnly.Parse("2025-09-05")))
                 .ReturnsAsync(false);
 
             var input = new VacationRequestInputModel

@@ -72,8 +72,7 @@ namespace WorkFlow.Vacation.Application.Services
             
             bool hasOverlap = await _repository.HasOverlapAsync(
                 input.StartDate,
-                input.EndDate,
-                UpdateId: id
+                input.EndDate
             );
 
             if (hasOverlap)
